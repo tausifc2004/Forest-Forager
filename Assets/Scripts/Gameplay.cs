@@ -18,6 +18,10 @@ public class Gameplay : MonoBehaviour
     void SetCountText()
     {
         keyCountText.text = "Keys: " + keyCount.ToString() + "/5";
+        if (keyCount == 5)
+        {
+
+        }
     }
 
     // Update is called once per frame
