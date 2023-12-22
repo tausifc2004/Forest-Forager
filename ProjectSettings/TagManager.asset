@@ -3,15 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Torch
+  - Key
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Collision
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
