@@ -11,7 +11,6 @@ public class Gameplay : MonoBehaviour
     public TextMeshProUGUI playerHPText;
     public GameObject door;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +36,7 @@ public class Gameplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // add "you win" screen when playerHP = 0
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,5 +53,7 @@ public class Gameplay : MonoBehaviour
             playerHP -= 10;
             SetHPText();
         }
+
+        // add "you win" screen when player collides with house
     }
 }
