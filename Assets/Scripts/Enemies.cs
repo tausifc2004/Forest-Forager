@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,7 +8,7 @@ public class Enemies : MonoBehaviour
 {
     public GameObject player;
     private NavMeshAgent agent;
-    private float lookRadius = 10f;
+    private float lookRadius = 15f;
     [SerializeField] private int enemyHP = 99;
 
     // Start is called before the first frame update
@@ -15,17 +16,15 @@ public class Enemies : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Torch"))
         {
-            Debug.Log("Collided");
+            Debug.Log("Torch Collided");
             enemyHP -= 33;
-        }
-        
+        }  
     }
 
     // Update is called once per frame
@@ -35,7 +34,6 @@ public class Enemies : MonoBehaviour
         if (distance <= lookRadius)
         {
             agent.SetDestination(player.transform.position);
-
         }
 
         if (enemyHP == 0)
@@ -43,6 +41,5 @@ public class Enemies : MonoBehaviour
             Debug.Log("Dead");
             gameObject.SetActive(false);
         }
-        
     }
 }

@@ -24,7 +24,7 @@ public class Raycasting : MonoBehaviour
                 clickPosition = hit.point;
                 torch2 = Instantiate(torch);
                 torch2.transform.position = clickPosition;
-                Destroy(torch2, 5);
+                Destroy(torch2, 1);
 
             }
         }

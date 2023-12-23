@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Torch
   - Key
+  - Enemy
+  - HPText
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8581042092055253958}
   m_Layer: 0
   m_Name: Tiger
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2464647725593809284}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.75
+  m_Radius: 1.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -131,7 +131,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 3, z: 3}
+  m_Size: {x: 3.25, y: 3, z: 3.25}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4938282758663930391
 PrefabInstance:
