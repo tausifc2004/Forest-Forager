@@ -8,7 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     public GameObject lostText;
+    public GameObject winText;
     public GameObject retryText;
+    public GameObject playerHPText;
+    public GameObject keyCountText;
     [SerializeField] private GameObject gameOverMenu;
 
     public GameObject sun;
@@ -29,13 +32,31 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timerText.text = "Time Left: " + targetTime.ToString("N0");
+        
         sunXRotation += 0.001f;
         sun.transform.localEulerAngles = new Vector3(sunXRotation, sun.transform.localEulerAngles.y, sun.transform.localEulerAngles.z);
-        //timerText.text = "Timer: " + targetTime.ToString("N0");
+        
         targetTime -= Time.deltaTime;
         if (targetTime <= 0.0f)
         {
+            timerText.text = "Time Left: 0";
             sunAnimator.SetBool("nuke", true);
+            if (targetTime <= -1.75f)
+            {
+                gameOverMenu.SetActive(true);
+                lostText.SetActive(true);
+                retryText.SetActive(true);
+                timerText.text = "";
+                playerHPText.SetActive(false);
+                keyCountText.SetActive(false);
+                Time.timeScale = 0f;
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    Time.timeScale = 1f;
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
+            }
         }
     }
 }
