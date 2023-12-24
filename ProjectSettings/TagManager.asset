@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - HPText
   - Door
+  - House
   layers:
   - Default
   - TransparentFX
